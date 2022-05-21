@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}{{s.last_name + s.first_name + s.patronymic_name}}{% endblock %}
+
+{% block navigation %}
+    <a href="{% url 'index' %}">НА ГЛАВНУЮ</a>
+{% endblock %}
+
+{% block content %}
+
+    <h3>{{s.student_id}}</h3>
+    <p>{{s.last_name}}</p>
+    <p>{{s.first_name}}</p>
+    <p>{{s.patronymic_name}}</p>
+    <p>{{s.date_of_birth}}</p>
+    <p>{{s.study_group}}</p>
+
+{% endblock %}

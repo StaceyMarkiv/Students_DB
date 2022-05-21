@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if students_list %}
+        {% for s in students_list %}
+            <a href="{% url 'detail' s.student_id %}">{{s.last_name}}</a><br>
+            <tr><td>{{ s.last_name }}</td>
+                <td>{{ s.first_name }}</td>
+                <td>{{ s.patronymic_name }}</td>
+                <td><a href="edit/{{person.id}}">Измeнить</a> |
+                    <a href="delete/{{person.id}}">Удaлить</a></td>
+             </tr>
+        {% endfor %}
+    {% else %}
+        Данные не найдены
+    {% endif %}
+{% endblock %}
